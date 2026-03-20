@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -19,6 +22,12 @@ jobs:
         run: |
           Install-Module -Name ps2exe -Force -Scope CurrentUser
 
+      - name: Obtener fecha para el tag
+        shell: pwsh
+        run: |
+          $date = Get-Date -Format "yyyy.MM.dd.HHmm"
+          echo "RELEASE_TAG=v$date" >> $env:GITHUB_ENV
+
       - name: Compilar PS1 a EXE
         shell: pwsh
         run: |
@@ -31,8 +40,11 @@ jobs:
             -description "Script de instalacion automatica con Winget" `
             -version "1.0.0"
 
-      - name: Subir EXE como artefacto
-        uses: actions/upload-artifact@v4
+      - name: Crear Release y subir EXE
+        uses: softprops/action-gh-release@v2
         with:
-          name: instalar_apps
-          path: instalar_apps.exe
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: "Instalador ${{ env.RELEASE_TAG }}"
+          body: |
+            Release generado automaticamente al hacer push a main.
+          files: instalar_apps.exe
