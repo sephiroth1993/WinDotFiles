@@ -1,0 +1,37 @@
+name: Compilar PS1 a EXE
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar ps2exe
+        shell: pwsh
+        run: |
+          Install-Module -Name ps2exe -Force -Scope CurrentUser
+
+      - name: Compilar PS1 a EXE
+        shell: pwsh
+        run: |
+          Invoke-ps2exe `
+            -inputFile "instalar_apps.ps1" `
+            -outputFile "instalar_apps.exe" `
+            -requireAdmin `
+            -title "Instalador de Apps" `
+            -description "Script de instalacion automatica con Winget" `
+            -version "1.0.0"
+
+      - name: Subir EXE como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: instalar_apps
+          path: instalar_apps.exe
