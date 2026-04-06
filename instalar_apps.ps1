@@ -55,6 +55,7 @@ Install-App "qBittorrent"                "qBittorrent.qBittorrent"
 Install-App "Playnite"                   "Playnite.Playnite"
 Install-App "Prism Launcher"             "PrismLauncher.PrismLauncher"
 Install-App "ImageMagick"                "ImageMagick.ImageMagick"
+Install-App "JDownloader"                "AppWork.JDownloader"
 
 # FFMPEG con PATH
 Install-App "FFMPEG"                     "Gyan.FFmpeg"
