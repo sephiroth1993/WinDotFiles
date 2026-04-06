@@ -1,6 +1,6 @@
-# 🖥️ Instalador Automático de Apps
+# 🖥️ Instalador Automático de Apps con Winget
 
-Script de instalación automática de aplicaciones.
+Script de instalación automática de aplicaciones para Windows x64, compilado como `.exe` mediante GitHub Actions.
 
 ---
 
@@ -26,6 +26,7 @@ Script de instalación automática de aplicaciones.
 | Playnite | `Playnite.Playnite` |
 | Prism Launcher | `PrismLauncher.PrismLauncher` |
 | ImageMagick | `ImageMagick.ImageMagick` |
+| JDownloader | `AppWork.JDownloader` |
 
 ### 🛠️ Herramientas CLI (con PATH configurado)
 | Aplicación | ID Winget | PATH |
@@ -66,6 +67,30 @@ Script de instalación automática de aplicaciones.
 
 ### Descargar el EXE
 Andá a la sección [Releases](../../releases) del repositorio y descargá la última versión del instalador.
+
+> El `.exe` se genera automáticamente con cada push a `main` mediante GitHub Actions.
+
+### Ejecutar
+1. Descargá `instalar_apps.exe` desde la sección Releases
+2. Hacé clic derecho → **Ejecutar como administrador**
+3. Esperá a que finalice la instalación
+4. Reiniciá el sistema para que los cambios de PATH tomen efecto
+
+---
+
+## ⚙️ Compilación
+
+El proyecto usa [ps2exe](https://github.com/MScholtes/PS2EXE) y GitHub Actions para compilar automáticamente el script `.ps1` a `.exe` con cada push a `main`.
+
+### Estructura del repositorio
+```
+📁 tu-repo/
+├── 📄 instalar_apps.ps1     # Script principal
+├── 🖼️ Icon.ico              # Icono del EXE
+└── 📁 .github/
+    └── 📁 workflows/
+        └── 📄 build.yml     # Workflow de compilación
+```
 
 ---
 
