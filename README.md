@@ -28,6 +28,15 @@ Script de instalación automática de aplicaciones para Windows x64, compilado c
 | ImageMagick | `ImageMagick.ImageMagick` |
 | JDownloader | `AppWork.JDownloader` |
 
+
+### 💻 Lenguajes de Programación
+| Aplicación | ID Winget | PATH |
+|---|---|---|
+| Go | `GoLang.Go` | `%ProgramFiles%\Goin` |
+| Node.js | `OpenJS.NodeJS` | Automático |
+| Python 3.14 | `Python.Python.3.14` | `%LOCALAPPDATA%\Programs\Python\Python314` |
+| Rust (rustup) | `Rustlang.Rustup` | Automático |
+
 ### 🛠️ Herramientas CLI (con PATH configurado)
 | Aplicación | ID Winget | PATH |
 |---|---|---|
