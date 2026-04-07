@@ -56,6 +56,10 @@ Install-App "Playnite"                   "Playnite.Playnite"
 Install-App "Prism Launcher"             "PrismLauncher.PrismLauncher"
 Install-App "ImageMagick"                "ImageMagick.ImageMagick"
 Install-App "JDownloader"                "AppWork.JDownloader"
+Install-App "MSI Afterburner"            "Guru3D.Afterburner"
+Install-App "Nilesoft Shell"             "Nilesoft.Shell"
+Install-App "Avidemux"                   "Avidemux.Avidemux"
+Install-App "HandBrake"                  "HandBrake.HandBrake"
 
 # FFMPEG con PATH
 Install-App "FFMPEG"                     "Gyan.FFmpeg"
