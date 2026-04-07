@@ -122,6 +122,39 @@ Install-App "Visual C++ 2012"            "Microsoft.VCRedist.2012.x64"
 Install-App "Visual C++ 2013"            "Microsoft.VCRedist.2013.x64"
 Install-App "Visual C++ 2015-2022"       "Microsoft.VCRedist.2015+.x64"
 
+
+# ------------------------------------------------------------
+# LENGUAJES DE PROGRAMACION
+# ------------------------------------------------------------
+
+Write-Host "`n[ LENGUAJES DE PROGRAMACION ]" -ForegroundColor Magenta
+
+Install-App "Go"                          "GoLang.Go"
+Write-Host "    Agregando Go al PATH del sistema..." -ForegroundColor Cyan
+$goPath = "$env:ProgramFiles\Goin"
+$currentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
+if ($currentPath -notlike "*$goPath*") {
+    [Environment]::SetEnvironmentVariable("PATH", "$currentPath;$goPath", "Machine")
+    Write-Host "    OK: Go agregado al PATH." -ForegroundColor Green
+} else {
+    Write-Host "    INFO: Go ya estaba en el PATH." -ForegroundColor Yellow
+}
+
+Install-App "Node.js"                     "OpenJS.NodeJS"
+
+Install-App "Python 3.14"                 "Python.Python.3.14"
+Write-Host "    Agregando Python al PATH del sistema..." -ForegroundColor Cyan
+$pythonPath = "$env:LOCALAPPDATA\Programs\Python\Python314"
+$currentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
+if ($currentPath -notlike "*$pythonPath*") {
+    [Environment]::SetEnvironmentVariable("PATH", "$currentPath;$pythonPath;$pythonPath\Scripts", "Machine")
+    Write-Host "    OK: Python agregado al PATH." -ForegroundColor Green
+} else {
+    Write-Host "    INFO: Python ya estaba en el PATH." -ForegroundColor Yellow
+}
+
+Install-App "Rust (rustup)"               "Rustlang.Rustup"
+
 # ------------------------------------------------------------
 # FINAL
 # ------------------------------------------------------------
