@@ -78,22 +78,6 @@ Andá a la sección [Releases](../../releases) del repositorio y descargá la ú
 
 ---
 
-## ⚙️ Compilación
-
-El proyecto usa [ps2exe](https://github.com/MScholtes/PS2EXE) y GitHub Actions para compilar automáticamente el script `.ps1` a `.exe` con cada push a `main`.
-
-### Estructura del repositorio
-```
-📁 tu-repo/
-├── 📄 instalar_apps.ps1     # Script principal
-├── 🖼️ Icon.ico              # Icono del EXE
-└── 📁 .github/
-    └── 📁 workflows/
-        └── 📄 build.yml     # Workflow de compilación
-```
-
----
-
 ## ⚠️ Requisitos
 - Windows 10 / 11 x64
 - Winget instalado (viene preinstalado en Windows 11 y Windows 10 actualizado)
