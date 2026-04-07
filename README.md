@@ -27,6 +27,10 @@ Script de instalación automática de aplicaciones para Windows x64, compilado c
 | Prism Launcher | `PrismLauncher.PrismLauncher` |
 | ImageMagick | `ImageMagick.ImageMagick` |
 | JDownloader | `AppWork.JDownloader` |
+| MSI Afterburner | `Guru3D.Afterburner` |
+| Nilesoft Shell | `Nilesoft.Shell` |
+| Avidemux | `Avidemux.Avidemux` |
+| HandBrake | `HandBrake.HandBrake` |
 
 
 ### 💻 Lenguajes de Programación
